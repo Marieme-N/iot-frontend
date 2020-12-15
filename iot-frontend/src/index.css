@@ -1,0 +1,233 @@
+body {
+    font-family: 'Euclid', 'AvenirNext-Regular', Arial, Helvetica, sans-serif, 'Arial', sans-serif;
+}
+
+button {
+    position: relative;
+    cursor: pointer;
+    bottom: 4px;
+}
+
+div {
+    position: relative;
+}
+
+input[type=button] {
+    cursor: pointer;
+}
+
+label {
+    top: 5px;
+}
+
+h1 {
+    color: #ec5424;
+    text-align: center;
+}
+
+input[type=range] {
+    color: #cccccc;
+    cursor: pointer;
+}
+
+#menu {
+    position: relative;
+    border-bottom: 1px gainsboro solid;
+}
+
+#logo {
+    width: 10%;
+    height: 10%;
+}
+
+#prog {
+    position: relative;
+    margin: auto;
+    width: 50%;
+    height: 100%;
+    border: 1px solid #ec5424;
+}
+
+#myTemperature {
+    text-align: center;
+    border: 0px;
+}
+
+#currentTemparature {
+    border: 1px solid #ec5424;
+    border-radius: 10px;
+    font-size: xx-large;
+    color:  #ec5424;
+}
+
+#menuLink {
+    position: absolute;
+    top: 25%;
+    margin-left: 70%;
+    color: #ec5424;
+}
+
+.switch {
+    position: relative;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+.slider {
+    border: 3px black;
+    border-radius: 34px;
+    position: absolute;
+    cursor: pointer;
+    background-color: #cccccc;
+    top: 3px;
+    left: 100%;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    height: 15px;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider::before {
+    border: 5px black;
+    border-radius: 50%;
+    position: absolute;
+    content: "";
+    left: 0px;
+    bottom: 0px;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: green;
+  }
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px green;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(105%);
+    -ms-transform: translateX(105%);
+    transform: translateX(105%);
+}
+
+.mySelect {
+    position: relative;
+}
+
+.mySelect input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.choice {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid #ec5424;
+}
+
+input:checked + .choice{
+    background-color: #ec5424;
+    border: 1px solid #ec5424;
+    opacity: 0.5;
+}
+
+#wait {
+    background-color: red;
+}
+
+#maintain {
+    background-color: green;
+}
+
+.chevron {
+    position: relative;
+}
+
+.chevron input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.changeTime {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 5px;
+    right: 0;
+    bottom: 0;
+}
+
+.split {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 0;
+  }
+
+.split2 {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  right: 0;
+}
+
+.pref {
+    position: relative;
+    left: 10%;
+    text-align: center;
+    border: 1px black solid;
+    width: 80%;
+}
+
+.pref h1 {
+    width: 30%;
+    font-size: 12px;
+    margin-top:-5px;
+    margin-left:5px;  
+    background-color: white;  
+}
+
+#schedule {
+    position: relative;
+}
+
+#hourUp {
+    position: absolute;
+    top: -60%;
+}
+
+#hourDown {
+    position: absolute;
+    top: 60%;
+}
+
+#minuteUp {
+    position: absolute;
+    left: 50%;
+    top: -60%;
+}
+
+#minuteDown {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+}
+  
