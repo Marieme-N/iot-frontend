@@ -9,8 +9,8 @@ const Waiting = ({ remainingTime, setRemainingTime, keepWarmTime, hour }) => {
         const interval = setInterval(() => {
             if (remainingTime !== 0) {
                 setCurrentMoment(moment());
-                const currentMomentInMinutes = moment(currentMoment).hour() * 60 + moment(currentMoment).minute();
-                const hourInMinutes = moment(hour).hour() * 60 + moment(hour).minute();
+                const currentMomentInMinutes = moment(currentMoment).asMinutes();
+                const hourInMinutes = moment(hour).asMinutes();
                 const remT = hourInMinutes - currentMomentInMinutes;
                 if (remT >= 0)
                     setRemainingTime(hourInMinutes - currentMomentInMinutes);

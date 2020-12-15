@@ -13,8 +13,8 @@ import AddKeepWarmTime from './AddKeepWarmTime';
 import Cancel from './Cancel';
 
 const MugSetUp = () => {
-    const [currentTemperature, setCurrentTemperature] = React.useState(-1);
-    const [desiredTemperature, setDesiredTemperature] = React.useState(currentTemperature);
+    const [currentTemperature, setCurrentTemperature] = React.useState(0);
+    const [desiredTemperature, setDesiredTemperature] = React.useState(50);
     const [hour, setHour] = React.useState(moment().add(5, "minutes"));
     const [keepWarmTime, setKeepWarmTime] = React.useState(0);
     const [validate, setValidate] = React.useState(false);
@@ -22,39 +22,47 @@ const MugSetUp = () => {
 
     function getStatus() {
         axios
-            .get('https://cors-anywhere.herokuapp.com/https://iot-notember.ew.r.appspot.com/get-status')
+            .get('https://iot-notember.ew.r.appspot.com/get-status')
             .then(res => {
                 console.log(res.data);
                 setCurrentTemperature(res.data.currentTemperature);
                 setValidate(['waiting', 'adjusting', 'ready'].find(elt => elt === res.data.planStatus))
-            });
+            })
+            .catch(e => console.log("error: cannot get status"));
     }
 
-    async function sendPlan() {
+    function sendPlan() {
         const config = {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         }
-        await axios.put('https://cors-anywhere.herokuapp.com/https://iot-notember.ew.r.appspot.com/stop-plan');
         axios
-            .post('https://cors-anywhere.herokuapp.com/https://iot-notember.ew.r.appspot.com/plan-warmup', {
+            .put('https://iot-notember.ew.r.appspot.com/stop-plan')
+            .catch(e => console.log("error: cannot stop plan"));
+        ;
+        const body = {
                 startHour: hour.format("dd/MM/YYYY HH:mm:ss"),
                 duration: keepWarmTime,
                 goalTemperature: desiredTemperature,
-            }, config);
+            }
+        console.log(body);
+        axios
+            .post('https://iot-notember.ew.r.appspot.com/plan-warmup', body, config)
+            .catch(e => console.log("error: cannot start warmup plan"));
     }
 
     function cancelPlan() {
-        axios.put('https://cors-anywhere.herokuapp.com/https://iot-notember.ew.r.appspot.com/stop-plan');
+        axios.put('https://iot-notember.ew.r.appspot.com/stop-plan').catch();
     }
 
     useEffect(() => {
+        getStatus();
         const interval = setInterval(() => {
             getStatus();
-        }, 10000);
+        }, 3000);
         return () => clearInterval(interval);
-    })
+    }, []);
 
     if (!validate) {
         return (

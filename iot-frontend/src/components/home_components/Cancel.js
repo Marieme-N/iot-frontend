@@ -5,16 +5,14 @@ import moment from 'moment'
 const Cancel = ({ setValidate, currentTemperature, setCurrentTemperature, setDesiredTemperature, setHour, setKeepWarmTime }) => {
 
     const onCancel = () => {
-        setValidate(false);
-        setCurrentTemperature(currentTemperature);
-        setDesiredTemperature(currentTemperature);
+        setValidate();
         setHour(moment());
         setKeepWarmTime(0);
     }
 
     return (
         <div>
-            <button onClick={onCancel}>Cancel</button>
+            <button type='button' onClick={onCancel}>Cancel</button>
         </div>
     )
 }

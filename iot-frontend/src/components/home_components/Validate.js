@@ -2,14 +2,13 @@ import React from 'react';
 import '../../index.css';
 
 const Validate = ({ setValidate }) => {
-
-    const onValidate = () => {
-        setValidate(true);
+    function onValidate() {
+        setValidate();
     }
 
     return (
         <div>
-            <button onClick={onValidate}>Valider</button>
+            <button type='button' onClick={onValidate}>Valider</button>
         </div>
     )
 }
