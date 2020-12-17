@@ -6,7 +6,7 @@ import BootstrapTable from 'react-bootstrap-table-next';
 
 const columns = [{
     dataField: 'startDate',
-    text: 'Start Date'
+    text: 'Start Date',
 },
 {
     dataField: 'duration',
@@ -22,7 +22,7 @@ const Statistics = () => {
 
     useEffect(() => {
         axios
-            .get('https://cors-anywhere.herokuapp.com/https://iot-notember.ew.r.appspot.com/all-sessions')
+            .get('https://iot-notember.ew.r.appspot.com/all-sessions')
             .then(res => {
                 setData(res.data);
             });
@@ -69,7 +69,7 @@ const Statistics = () => {
                     hover
                     keyField='id'
                     data={data}
-                    columns={columns} />
+                    columns={columns}/>
             </div>
             <div class="split2">
                 <div class="pref">

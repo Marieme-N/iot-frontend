@@ -32,23 +32,18 @@ const MugSetUp = () => {
     }
 
     function sendPlan() {
-        const config = {
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }
-        }
         axios
             .put('https://iot-notember.ew.r.appspot.com/stop-plan')
             .catch(e => console.log("error: cannot stop plan"));
         ;
         const body = {
-                startHour: hour.format("dd/MM/YYYY HH:mm:ss"),
+                startHour: hour.format("DD/MM/YYYY HH:mm:ss"),
                 duration: keepWarmTime,
                 goalTemperature: desiredTemperature,
             }
         console.log(body);
         axios
-            .post('https://iot-notember.ew.r.appspot.com/plan-warmup', body, config)
+            .post('https://iot-notember.ew.r.appspot.com/plan-warmup', body)
             .catch(e => console.log("error: cannot start warmup plan"));
     }
 
