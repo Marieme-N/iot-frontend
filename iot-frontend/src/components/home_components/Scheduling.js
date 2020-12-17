@@ -29,12 +29,13 @@ const Scheduling = ({ hour, setHour }) => {
     return (
         <div>
             <span id="test"><label>Préparer ma tasse pour:
+                <br></br>
                 <span id="schedule">
+                    <span id="myTime">{moment(hour).format("HH:mm")}</span>
                     <label id="hourUp" className="chevron"><input onClick={onHourUpClick} type="button" name="addTime"></input><span className="changeTime"><FontAwesomeIcon icon={faChevronUp} /></span></label>
                     <label id="hourDown" className="chevron"><input onClick={onHourDownClick} type="button" name="addTime"></input><span className="changeTime"><FontAwesomeIcon icon={faChevronDown} /></span></label>
                     <label id="minuteUp" className="chevron"><input onClick={onMinutesUpClick} type="button" name="addTime"></input><span className="changeTime"><FontAwesomeIcon icon={faChevronUp} /></span></label>
                     <label id="minuteDown" className="chevron"><input onClick={onMinutesDownClick} type="button" name="addTime"></input><span className="changeTime"><FontAwesomeIcon icon={faChevronDown} /></span></label>
-                    {moment(hour).format("HH:mm")}
                 </span>
             </label>
             </span>
