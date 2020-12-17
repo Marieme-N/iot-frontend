@@ -37,7 +37,7 @@ const MugSetUp = () => {
             .catch(e => console.log("error: cannot stop plan"));
         ;
         const body = {
-                startHour: hour.format("DD/MM/YYYY HH:mm:ss"),
+                startHour: hour.subtract(1, 'hours').format("DD/MM/YYYY HH:mm:ss"),
                 duration: keepWarmTime,
                 goalTemperature: desiredTemperature,
             }
