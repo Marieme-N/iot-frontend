@@ -5,12 +5,16 @@ body {
 button {
     position: relative;
     cursor: pointer;
-    bottom: 4px;
+    bottom: 2px;
+    color: #cccccc;
+    border: 1px solid gray;
+    border-radius: 20px;
+    background-color: #ec5424;
 }
-
+/*
 div {
     position: relative;
-}
+}*/
 
 input[type=button] {
     cursor: pointer;
@@ -32,12 +36,24 @@ input[type=range] {
 
 #menu {
     position: relative;
-    border-bottom: 1px gainsboro solid;
+    border-bottom: 2px gainsboro solid;
+    background-color: #2D241E;
+    border-style: outset;
 }
 
 #logo {
     width: 10%;
     height: 10%;
+}
+
+#myHomePopUp {
+    top: 25%;
+    position: absolute;
+    left: 30%;
+    border:2px solid #D3D3D3;
+    border-style: outset;
+    border-radius: 20px;
+    background-color: white;
 }
 
 #prog {
@@ -46,6 +62,9 @@ input[type=range] {
     width: 50%;
     height: 100%;
     border: 1px solid #ec5424;
+    border-radius: 3px;
+    border-style:dashed;
+    bottom: 5px;
 }
 
 #myTemperature {
@@ -56,6 +75,7 @@ input[type=range] {
 #currentTemparature {
     border: 1px solid #ec5424;
     border-radius: 10px;
+    border-style: outset;
     font-size: xx-large;
     color:  #ec5424;
 }
@@ -209,14 +229,20 @@ input:checked + .choice{
     position: relative;
 }
 
+#myTime {
+    position: relative;
+}
+
 #hourUp {
     position: absolute;
     top: -60%;
+    right: 60%;
 }
 
 #hourDown {
     position: absolute;
     top: 60%;
+    right: 60%;
 }
 
 #minuteUp {

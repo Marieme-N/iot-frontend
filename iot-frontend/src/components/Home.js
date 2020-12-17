@@ -6,7 +6,7 @@ import MugSetUp from './home_components/MugSetUp';
 const Reglages = () => {
 
     return (
-        <div>
+        <div id="myHomePopUp">
             <h1>Programmer ma tasse</h1>
             <div id="prog">
                 <div align="center">
