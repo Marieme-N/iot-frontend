@@ -37,7 +37,7 @@ const Statistics = () => {
     }
 
     function mode(array) {
-        if (array.length == 0)
+        if (array.length === 0)
             return null;
         var modeMap = {};
         var maxEl = array[0], maxCount = 1;

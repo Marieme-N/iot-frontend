@@ -9,9 +9,7 @@ const Waiting = ({ remainingTime, setRemainingTime, keepWarmTime, hour }) => {
             const currentMoment = moment();
             const currentMomentInMinutes = moment(currentMoment).hour() * 60 + moment(currentMoment).minute();
             const hourInMinutes = moment(hour).hour() * 60 + moment(hour).minute();
-            const remT = hourInMinutes - currentMomentInMinutes;
-            if (remT >= 0)
-                setRemainingTime(hourInMinutes - currentMomentInMinutes);
+            setRemainingTime(hourInMinutes - currentMomentInMinutes < 0 ? hourInMinutes - currentMomentInMinutes + 60 : hourInMinutes - currentMomentInMinutes);
         }
     }, [])
 
@@ -25,7 +23,7 @@ const Waiting = ({ remainingTime, setRemainingTime, keepWarmTime, hour }) => {
                 if (remT >= 0)
                     setRemainingTime(hourInMinutes - currentMomentInMinutes);
             }
-        }, 60000);
+        }, 10000);
 
         return () => clearInterval(interval);
     }, [hour, remainingTime, setRemainingTime]);
