@@ -68,6 +68,7 @@ const Statistics = () => {
                     striped
                     hover
                     keyField='id'
+                    sort='true'
                     data={data}
                     columns={columns}/>
             </div>

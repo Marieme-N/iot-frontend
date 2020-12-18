@@ -256,4 +256,18 @@ input:checked + .choice{
     left: 50%;
     top: 60%;
 }
+
+#video {
+    background-color: #2D241E;
+    border:2px solid #D3D3D3;
+    border-style: outset;
+    
+}
+#prez {
+    color: #2D241E;
+    font-family: 'Euclid', 'AvenirNext-Regular', Arial, Helvetica, sans-serif, 'Arial', sans-serif;
+
+}
+
+
   
